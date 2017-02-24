@@ -32,12 +32,12 @@
   <node name="rviz" pkg="rviz" type="rviz"
         args="-d $(find bitcraze_lps_estimator)/data/rvizconfig_swarm_with_goal.rviz"/>
 
-  <node name= "broadcast" pkg="crazyflie_demo" type= "broadcast.py" output="screen">
-  	<param name="name0" value="file0" />
-  	<param name="name1" value="file1" />
-  	<param name="name2" value="file2" />
-  	<param name="name3" value="file3" />
-  	<param name="name4" value="file4" />
+  <node name="broadcast" pkg="crazyflie_demo" type="broadcast.py" output="screen">
+    <param name="name0" value="flie0" />
+    <param name="name1" value="flie1" />
+    <param name="name2" value="flie2" />
+    <param name="name3" value="flie3" />
+    <param name="name4" value="flie4" />
   </node>
 
   <group ns="crazyflie0">
@@ -66,7 +66,7 @@
       <param name="x" value="$(arg x0)" />
       <param name="y" value="$(arg y0)" />
       <param name="z" value="$(arg z0)" />
-	  <param name ="file" value="file0" />	<!--OSCデータ-->
+      <param name ="flie" value="flie0" />	<!--OSCデータ-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
@@ -103,7 +103,7 @@
       <param name="x" value="$(arg x1)" />
       <param name="y" value="$(arg y1)" />
       <param name="z" value="$(arg z1)" />
-	  <param name ="file" value="file1" />	<!--OSCデータ-->
+      <param name ="flie" value="flie1" />	<!--OSCデータ-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
@@ -141,7 +141,7 @@
       <param name="x" value="$(arg x2)" />
       <param name="y" value="$(arg y2)" />
       <param name="z" value="$(arg z2)" />
-	  <param name ="file" value="file2" />	<!--OSCデータ-->
+      <param name ="flie" value="flie2" />	<!--OSCデータ-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
@@ -178,7 +178,7 @@
       <param name="x" value="$(arg x3)" />
       <param name="y" value="$(arg y3)" />
       <param name="z" value="$(arg z3)" />
-	  <param name ="file" value="file3" />	<!--OSCデータ-->
+      <param name ="flie" value="flie3" />	<!--OSCデータ-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
@@ -215,7 +215,7 @@
       <param name="x" value="$(arg x4)" />
       <param name="y" value="$(arg y4)" />
       <param name="z" value="$(arg z4)" />
-	  <param name ="file" value="file4" />	<!--OSCデータ-->
+      <param name ="flie" value="flie4" />	<!--OSCデータ-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
