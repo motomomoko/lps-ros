@@ -40,6 +40,14 @@
     <param name="name4" value="flie4" />
   </node>
 
+ <node name="trigger" pkg="crazyflie_demo" type="broadcast.py" output="screen">
+    <param name="name0" value="tri0" />
+    <param name="name1" value="tri1" />
+    <param name="name2" value="tri2" />
+    <param name="name3" value="tri3" />
+    <param name="name4" value="tri4" />
+ </node>
+
   <group ns="crazyflie0">
     <rosparam command="load" file="$(find bitcraze_lps_estimator)/data/anchor_pos.yaml" />
 
@@ -54,19 +62,19 @@
       </rosparam>
     </node>
 
-    <node name="joystick_controller" pkg="crazyflie_demo" type="controller.py" output="screen">
-      <param name="use_crazyflie_controller" value="True" />
+    <node name="osc_controller" pkg="crazyflie_demo" type="controller2.py" output="screen">
+      <param name="flie" value="tri0" />  <!--OSC trigger-->
     </node>
 
     <node name="controller_bridge" pkg="bitcraze_lps_estimator" type="crazyflie_controller_bridge.py" output="screen"/>
 
-    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop.py" output="screen">
+    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop2.py" output="screen">
       <param name="name" value="goal" />
       <param name="rate" value="30" />
       <param name="x" value="$(arg x0)" />
       <param name="y" value="$(arg y0)" />
       <param name="z" value="$(arg z0)" />
-      <param name ="flie" value="flie0" />	<!--OSCデータ-->
+      <param name="flie" value="flie0" />	<!--OSC position-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
@@ -91,19 +99,19 @@
       </rosparam>
     </node>
 
-    <node name="joystick_controller" pkg="crazyflie_demo" type="controller.py" output="screen">
-      <param name="use_crazyflie_controller" value="True" />
+    <node name="osc_controller" pkg="crazyflie_demo" type="controller2.py" output="screen">
+      <param name="flie" value="tri1" />  <!--OSC trigger-->
     </node>
 
     <node name="controller_bridge" pkg="bitcraze_lps_estimator" type="crazyflie_controller_bridge.py" output="screen"/>
 
-    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop.py" output="screen">
+    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop2.py" output="screen">
       <param name="name" value="goal" />
       <param name="rate" value="30" />
       <param name="x" value="$(arg x1)" />
       <param name="y" value="$(arg y1)" />
       <param name="z" value="$(arg z1)" />
-      <param name ="flie" value="flie1" />	<!--OSCデータ-->
+      <param name="flie" value="flie1" />	<!--OSC position-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
@@ -129,19 +137,19 @@
       </rosparam>
     </node>
 
-    <node name="joystick_controller" pkg="crazyflie_demo" type="controller.py" output="screen">
-      <param name="use_crazyflie_controller" value="True" />
+    <node name="osc_controller" pkg="crazyflie_demo" type="controller2.py" output="screen">
+      <param name="flie" value="tri2" />  <!-- OSC trigger-->
     </node>
 
     <node name="controller_bridge" pkg="bitcraze_lps_estimator" type="crazyflie_controller_bridge.py" output="screen"/>
 
-    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop.py" output="screen">
+    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop2.py" output="screen">
       <param name="name" value="goal" />
       <param name="rate" value="30" />
       <param name="x" value="$(arg x2)" />
       <param name="y" value="$(arg y2)" />
       <param name="z" value="$(arg z2)" />
-      <param name ="flie" value="flie2" />	<!--OSCデータ-->
+      <param name="flie" value="flie2" />	<!--OSC position-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
@@ -166,19 +174,19 @@
       </rosparam>
     </node>
 
-    <node name="joystick_controller" pkg="crazyflie_demo" type="controller.py" output="screen">
-      <param name="use_crazyflie_controller" value="True" />
+    <node name="osc_controller" pkg="crazyflie_demo" type="controller2.py" output="screen">
+      <param name="flie" value="tri3" />  <!--OSC trigger-->
     </node>
 
     <node name="controller_bridge" pkg="bitcraze_lps_estimator" type="crazyflie_controller_bridge.py" output="screen"/>
 
-    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop.py" output="screen">
+    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop2.py" output="screen">
       <param name="name" value="goal" />
       <param name="rate" value="30" />
       <param name="x" value="$(arg x3)" />
       <param name="y" value="$(arg y3)" />
       <param name="z" value="$(arg z3)" />
-      <param name ="flie" value="flie3" />	<!--OSCデータ-->
+      <param name="flie" value="flie3" />	<!--OSC position-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
@@ -203,19 +211,19 @@
       </rosparam>
     </node>
 
-    <node name="joystick_controller" pkg="crazyflie_demo" type="controller.py" output="screen">
-      <param name="use_crazyflie_controller" value="True" />
+    <node name="osc_controller" pkg="crazyflie_demo" type="controller2.py" output="screen">
+      <param name="flie" value="tri4" />  <!--OSC trigger-->
     </node>
 
     <node name="controller_bridge" pkg="bitcraze_lps_estimator" type="crazyflie_controller_bridge.py" output="screen"/>
 
-    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop.py" output="screen">
+    <node name="pose" pkg="crazyflie_demo" type="publish_pose_teleop2.py" output="screen">
       <param name="name" value="goal" />
       <param name="rate" value="30" />
       <param name="x" value="$(arg x4)" />
       <param name="y" value="$(arg y4)" />
       <param name="z" value="$(arg z4)" />
-      <param name ="flie" value="flie4" />	<!--OSCデータ-->
+      <param name="flie" value="flie4" />	<!--OSC position-->
     </node>
 
     <node name="lps_efk_bridge" pkg="bitcraze_lps_estimator" type="lps_ekf_bridge.py" output="screen">
